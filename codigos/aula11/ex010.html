@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velocidade do veículo</title>
+    <style>
+        body {
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Velocidade do veículo</h1>
+    <hr>
+    <input type="number" name="txtvel" id="txtvel"> Km/h
+    <input type="button" value="Verificar" onclick="verificaVelocidade()">
+    <p id="lim">O limite de velocidade é 80 km/h</p>
+    <div id="res"></div>
+    <script>
+        function verificaVelocidade() {
+            var txtVel = document.querySelector('input#txtvel')
+            var res = document.querySelector('div#res')
+            var vel = Number(txtVel.value)
+            res.innerHTML = `<p>Sua velocidade atual é <strong>${vel} Km/h</strong>.</p>`
+            if(vel > 80) {
+                res.innerHTML += '<p><strong>Você está acima do limite de velocidade!</strong></p>'
+            }
+            res.innerHTML += '<p>Dirija sempre com cinto de segurança!</p>'
+        }
+    </script>
+</body>
+</html>
